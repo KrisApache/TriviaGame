@@ -1,5 +1,5 @@
 body{
-    background-image: url("./../images/backgr.jpg");
+    background-image: url("./../images/giphy.gif");
     background-repeat: no-repeat, no-repeat;
     background-size: cover;
 }
@@ -16,7 +16,7 @@ p, #correct, #wrong, #unanswered{
 
 #quizArea{
     width: 60%;
-    height: 700px;
+    height: 800px;
     background-color: lightskyblue;
     text-align: center;
     margin: auto;
@@ -48,7 +48,7 @@ p, #correct, #wrong, #unanswered{
     width: 280px;
 }
 
-
+/* 
 @keyframes blink {
     50% {
       opacity: 0.0;
@@ -59,9 +59,9 @@ p, #correct, #wrong, #unanswered{
   #correct-message {
       color: green;
     animation: blink 1s step-start 0s infinite;
-   }
+   } */
 
-   #wrong-message {
+   /* #wrong-message {
     color: red;
   animation: blink 1s step-start 0s infinite;
- }
+ } */
