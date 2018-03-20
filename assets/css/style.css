@@ -4,7 +4,7 @@ body{
     background-size: cover;
 }
 
-b{
+p, #correct, #wrong, #unanswered{
     font-family: 'Play', sans-serif;
     font-size: 30px;
 }

@@ -5,8 +5,9 @@ var wrongAnswer = 0;
 var unanswered = 0; // decrement everytime above 2 variables are incremented
 var questionCount = 0;
 
-var timer = 11;
+var timer = 16;
 var intervalId;
+var isSelectionActive = true;
 
 // var  quesDiv= "<p>How many planets are there in solar system?</p><br><button class=\"options\" id=\"1\" val=\"1\">Three</button><br><button class=\"options\" id=\"2\" val=\"2\">Nine</button><br><button class=\"options\" id=\"3\" val=\"3\">Eight</button><br><button class=\"options\" id=\"4\" val=\"4\">Twenty</button>"
 
@@ -60,7 +61,7 @@ var questions = [
     },
 
     {
-        quesDiv: "<h1>Question 10</h1><p>What do you call a region of space-time from which nothing can escape including light?</p><br><button class=\"options\" id=\"1\" val=\"1\">Quasar</button><br><button class=\"options\" id=\"2\" val=\"2\">Black Hole</button><br><button class=\"options\" id=\"3\" val=\"3\">Nebula</button><br><button class=\"options\" id=\"4\" val=\"4\">Pulsar</button>",
+        quesDiv: "<h1>Question 10</h1><p>Which one is a region of spacetime from which nothing can escape?</p><br><button class=\"options\" id=\"1\" val=\"1\">Quasar</button><br><button class=\"options\" id=\"2\" val=\"2\">Black Hole</button><br><button class=\"options\" id=\"3\" val=\"3\">Nebula</button><br><button class=\"options\" id=\"4\" val=\"4\">Pulsar</button>",
         ans: 2
     }
 ];
@@ -92,12 +93,14 @@ $(document).on("click", ".options", function () {
 
 
    ////////////// //questionCount < 3
-    if (parseInt(selectedOption) == parseInt(currentAnswer)) {
+    if ((parseInt(selectedOption) == parseInt(currentAnswer)) && isSelectionActive) {
+        isSelectionActive = false;
         correcAnswer++;
         $("#correct-message").html("<h1>Correct Answer!</h1>");
         setTimeout(nextQuestion,2000);
         }
-    else {
+    else if ((parseInt(selectedOption) != parseInt(currentAnswer)) && isSelectionActive) {
+        isSelectionActive = false;
         wrongAnswer++;
         $("#wrong-message").html("<h1>Wrong Answer</h1>");
         setTimeout(nextQuestion,2000);
@@ -115,7 +118,7 @@ function initGame() {
     wrongAnswer = 0;
     unanswered = 0;
     questionCount = 0;
-    timer = 11;
+    timer = 16;
     $("#correct").html("");
     $("#wrong").html("");
     $("#unanswered").html("");
@@ -128,6 +131,7 @@ function nextQuestion() {
     $("#correct-message").html("");
     $("#wrong-message").html("");
     $("#question").empty();
+    isSelectionActive = true;
 
     if (questionCount < 10) {
         runTimer();
@@ -175,6 +179,6 @@ function decrementTimer() {
 
   function resetTimer() {
     clearInterval(intervalId);
-    timer = 11;
+    timer = 16;
     // alert("Time Up!");
   }
