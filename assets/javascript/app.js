@@ -15,7 +15,7 @@ var intervalId;
 
 var questions = [
     {
-        quesDiv: "<h1>Question 1</h1><p>One How many planets are there in our solar system?</p><br><button class=\"options\" id=\"1\" val=\"1\">Three</button><br><button class=\"options\" id=\"2\" val=\"2\">Nine</button><br><button class=\"options\" id=\"3\" val=\"3\">Eight</button><br><button class=\"options\" id=\"4\" val=\"4\">Twenty</button>",
+        quesDiv: "<h1>Question 1</h1><p>How many planets are there in our solar system?</p><br><button class=\"options\" id=\"1\" val=\"1\">Three</button><br><button class=\"options\" id=\"2\" val=\"2\">Nine</button><br><button class=\"options\" id=\"3\" val=\"3\">Eight</button><br><button class=\"options\" id=\"4\" val=\"4\">Twenty</button>",
         ans: 3
     },
 
